@@ -61,5 +61,5 @@ public class VideospielTest
 		assertEquals(_videoSpiel.berechneMietgebuehr(3), Geldbetrag.get(200));
 		assertEquals(_videoSpiel.berechneMietgebuehr(10), Geldbetrag.get(200));
 	}
-    
+     
 }
