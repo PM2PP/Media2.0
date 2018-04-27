@@ -18,7 +18,7 @@ public class DVDTest
     public DVDTest()
     {
         _dvd1 = getMedium();
-        _dvd2 = getMedium();
+        _dvd2 = getMedium(); 
     }
 
     @Test
@@ -74,5 +74,16 @@ public class DVDTest
     {
         return new DVD(TITEL, KOMMENTAR, REGISSEUR, LAENGE);
     }
+    
+    @Test
+	public void testBerechneMietgebuehr()
+	{
+		assertEquals(_dvd1.berechneMietgebuehr(1), Geldbetrag.get(300));
+		assertEquals(_dvd1.berechneMietgebuehr(3), Geldbetrag.get(900));
+		assertEquals(_dvd1.berechneMietgebuehr(10), Geldbetrag.get(3000));
+		assertEquals(_dvd2.berechneMietgebuehr(1), Geldbetrag.get(300));
+		assertEquals(_dvd2.berechneMietgebuehr(3), Geldbetrag.get(900));
+		assertEquals(_dvd2.berechneMietgebuehr(10), Geldbetrag.get(3000));
+	}
 
 }

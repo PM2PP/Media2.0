@@ -8,7 +8,7 @@ import java.util.List;
  * @author SE2-Team, PM2-Team
  * @version SoSe 2018
  */
-abstract class AbstractObservableService implements ObservableService //git Test
+abstract class AbstractObservableService implements ObservableService 
 {
 
     /**

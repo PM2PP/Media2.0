@@ -18,7 +18,7 @@ public class VideospielTest
     {
         _videoSpiel = getMedium();
     }
-
+ 
     @Test
     public void testeVideospiel()
     {
@@ -54,4 +54,12 @@ public class VideospielTest
         assertEquals(medium.getTitel(), "Titel2");
     }
 
+    @Test
+	public void testBerechneMietgebuehr()
+	{
+		assertEquals(_videoSpiel.berechneMietgebuehr(1), Geldbetrag.get(200));
+		assertEquals(_videoSpiel.berechneMietgebuehr(3), Geldbetrag.get(200));
+		assertEquals(_videoSpiel.berechneMietgebuehr(10), Geldbetrag.get(200));
+	}
+    
 }
