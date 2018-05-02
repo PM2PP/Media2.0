@@ -47,7 +47,7 @@ public abstract class AbstractMedium implements Medium
 		_kommentar = kommentar;
 	}
 
-	public String getTitel() 
+	public String getTitel()
 	{
 		return _titel;
 	}
@@ -63,11 +63,9 @@ public abstract class AbstractMedium implements Medium
 		return getMedienBezeichnung() + ":\n" + "    " + "Titel: " + _titel + "\n" + "    " + "Kommentar: "
 				+ _kommentar;
 	}
-	
+
 	public Geldbetrag berechneMietgebuehr(int mietTage)
 	{
-		return Geldbetrag.get(mietTage *300);
+		return Geldbetrag.get(mietTage * 300);
 	}
-	
-
 }
