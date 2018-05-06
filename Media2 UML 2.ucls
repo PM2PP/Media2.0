@@ -66,7 +66,7 @@
   </interface>  
   <class id="8" language="java" name="CD" project="Mediathek_VorlageBlatt02" 
     file="/Mediathek_VorlageBlatt02/src/CD.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="164" y="343"/>    
+    <position height="-1" width="-1" x="236" y="443"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
