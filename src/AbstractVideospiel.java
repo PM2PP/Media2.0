@@ -12,16 +12,7 @@ abstract class AbstractVideospiel extends AbstractMedium
 	 */
 	private String _system;
 
-	// /**
-	// * Ein Kommentar zum Medium
-	// */
-	// private String _kommentar;
-	//
-	// /**
-	// * Der Titel des Mediums
-	// */
-	// private String _titel;
-
+	public static final int _basispreis = 200; 
 	/**
 	 * Initialisiert ein neues Videospiel.
 	 * 
@@ -77,7 +68,10 @@ abstract class AbstractVideospiel extends AbstractMedium
 	@Override
 	public Geldbetrag berechneMietgebuehr(int mietTage)
 	{
-		return Geldbetrag.get(200);
+		return Geldbetrag.get(getPreisNachTagen(mietTage) + _basispreis);
+		
 	}
+	
+	public abstract int getPreisNachTagen(int tage);
 	
 }

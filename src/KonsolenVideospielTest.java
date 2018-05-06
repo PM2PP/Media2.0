@@ -57,12 +57,17 @@ public class KonsolenVideospielTest
 	{
 		assertEquals(_kVideoSpiel.berechneMietgebuehr(1), Geldbetrag.get(200));
 		assertEquals(_kVideoSpiel.berechneMietgebuehr(4), Geldbetrag.get(900));
+		assertEquals(_kVideoSpiel.berechneMietgebuehr(6), Geldbetrag.get(900));
 		assertEquals(_kVideoSpiel.berechneMietgebuehr(7), Geldbetrag.get(1600));
+		assertEquals(_kVideoSpiel.berechneMietgebuehr(8), Geldbetrag.get(1600));
 		assertEquals(_kVideoSpiel.berechneMietgebuehr(9), Geldbetrag.get(1600));
 		assertEquals(_kVideoSpiel.berechneMietgebuehr(10), Geldbetrag.get(2300));
-		assertEquals(_kVideoSpiel.berechneMietgebuehr(19), Geldbetrag.get(4500));
-		assertEquals(_kVideoSpiel.berechneMietgebuehr(27), Geldbetrag.get(5900));
-		assertEquals(_kVideoSpiel.berechneMietgebuehr(28), Geldbetrag.get(6600));
+		assertEquals(_kVideoSpiel.berechneMietgebuehr(11), Geldbetrag.get(2300));
+		assertEquals(_kVideoSpiel.berechneMietgebuehr(17), Geldbetrag.get(3700));
+		assertEquals(_kVideoSpiel.berechneMietgebuehr(18), Geldbetrag.get(3700));
+		assertEquals(_kVideoSpiel.berechneMietgebuehr(19), Geldbetrag.get(4400));
+		assertEquals(_kVideoSpiel.berechneMietgebuehr(27), Geldbetrag.get(5800));
+		assertEquals(_kVideoSpiel.berechneMietgebuehr(28), Geldbetrag.get(6500));
 	}
 
 }

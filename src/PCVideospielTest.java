@@ -58,7 +58,10 @@ public class PCVideospielTest
 		assertEquals(_pcVideoSpiel.berechneMietgebuehr(8), Geldbetrag.get(700));
 		assertEquals(_pcVideoSpiel.berechneMietgebuehr(11), Geldbetrag.get(700));
 		assertEquals(_pcVideoSpiel.berechneMietgebuehr(12), Geldbetrag.get(1200));
-		assertEquals(_pcVideoSpiel.berechneMietgebuehr(20), Geldbetrag.get(2200));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(13), Geldbetrag.get(1200));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(14), Geldbetrag.get(1200));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(17), Geldbetrag.get(1700));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(23), Geldbetrag.get(2200));
 		assertEquals(_pcVideoSpiel.berechneMietgebuehr(27), Geldbetrag.get(2700));
 		assertEquals(_pcVideoSpiel.berechneMietgebuehr(28), Geldbetrag.get(3200));
 	}
