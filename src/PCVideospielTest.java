@@ -53,14 +53,14 @@ public class PCVideospielTest
 	@Test
 	public void testBerechneMietgebuehr()
 	{
-		assertEquals(_pcVideoSpiel.berechneMietgebuehr(1), Geldbetrag.get(0));
-		assertEquals(_pcVideoSpiel.berechneMietgebuehr(7), Geldbetrag.get(0));
-		assertEquals(_pcVideoSpiel.berechneMietgebuehr(8), Geldbetrag.get(500));
-		assertEquals(_pcVideoSpiel.berechneMietgebuehr(11), Geldbetrag.get(500));
-		assertEquals(_pcVideoSpiel.berechneMietgebuehr(12), Geldbetrag.get(1000));
-		assertEquals(_pcVideoSpiel.berechneMietgebuehr(20), Geldbetrag.get(2000));
-		assertEquals(_pcVideoSpiel.berechneMietgebuehr(27), Geldbetrag.get(2500));
-		assertEquals(_pcVideoSpiel.berechneMietgebuehr(28), Geldbetrag.get(3000));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(1), Geldbetrag.get(200));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(7), Geldbetrag.get(200));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(8), Geldbetrag.get(700));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(11), Geldbetrag.get(700));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(12), Geldbetrag.get(1200));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(20), Geldbetrag.get(2200));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(27), Geldbetrag.get(2700));
+		assertEquals(_pcVideoSpiel.berechneMietgebuehr(28), Geldbetrag.get(3200));
 	}
 
 }
