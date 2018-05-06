@@ -5,7 +5,7 @@
  * @author SE2-Team, PR2-Team, PR2-Team
  * @version SoSe 2018
  */
-class Videospiel extends AbstractMedium
+abstract class AbstractVideospiel extends AbstractMedium
 {
 	/**
 	 * Das System, auf dem das Spiel lauffähig ist
@@ -37,7 +37,7 @@ class Videospiel extends AbstractMedium
 	 * 
 	 * @ensure getSystem() == system
 	 */
-	public Videospiel(String titel, String kommentar, String system)
+	public AbstractVideospiel(String titel, String kommentar, String system)
 	{
 		super(titel, kommentar);
 		assert system != null : "Vorbedingung verletzt: system != null";

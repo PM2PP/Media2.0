@@ -1,5 +1,5 @@
 
-public abstract class AbstractMedium implements Medium
+abstract class AbstractMedium implements Medium
 {
 
 	/**
