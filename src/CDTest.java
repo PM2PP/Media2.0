@@ -32,6 +32,7 @@ public class CDTest extends AbstractMediumTest
 	@Test
 	public void testKonstruktor()
 	{
+		super.testKonstruktor();
 //		assertEquals(TITEL, _cd1.getTitel());
 //		assertEquals(KOMMENTAR, _cd1.getKommentar());
 		assertEquals(LAENGE, getMedium().getSpiellaenge());

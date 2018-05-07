@@ -20,6 +20,7 @@ public abstract class AbstractVideospielTest extends AbstractMediumTest
 	@Override
 	public void testKonstruktor()
 	{
+		super.testKonstruktor();
 //		assertEquals(TITEL, _aVideospiel.getTitel());
 //		assertEquals(KOMMENTAR, _aVideospiel.getKommentar());
 		assertEquals(SYSTEM, getMedium().getSystem());

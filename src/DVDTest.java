@@ -33,6 +33,7 @@ public class DVDTest extends AbstractMediumTest
     @Override
     public void testKonstruktor()
     {
+    	super.testKonstruktor();
 //        assertEquals(TITEL, _dvd1.getTitel());
 //        assertEquals(KOMMENTAR, _dvd1.getKommentar());
         assertEquals(LAENGE, getMedium().getLaufzeit());
