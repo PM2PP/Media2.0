@@ -16,7 +16,7 @@ public class AusleiheMedienFormatiererComparatorTest
     private CD _cd2;
     private CD _cd3;
     private DVD _dvd;
-    private Videospiel _videospiel;
+    private KonsolenVideospiel _videospiel;
     private AusleiheMedienFormatiererComparator _medienComparator;
 
     public AusleiheMedienFormatiererComparatorTest()
@@ -27,7 +27,7 @@ public class AusleiheMedienFormatiererComparatorTest
         _cd3 = new CD("Titel b", "Kommentar", "Interpret", 100);
 
         _dvd = new DVD("Titel a", "Kommentar", "Regisseur", 100);
-        _videospiel = new Videospiel("Titel a", "Kommentar", "Wii");
+        _videospiel = new KonsolenVideospiel("Titel a", "Kommentar", "Wii");
 
         _medienComparator = new AusleiheMedienFormatiererComparator();
     }

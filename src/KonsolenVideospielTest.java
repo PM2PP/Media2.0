@@ -32,6 +32,7 @@ public class KonsolenVideospielTest extends AbstractVideospielTest
 //		assertEquals(BEZEICHNUNG, _kVideoSpiel.getMedienBezeichnung());
 //	}
 
+	@Override
 	protected KonsolenVideospiel getMedium()
 	{
 		return new KonsolenVideospiel(TITEL, KOMMENTAR, SYSTEM);

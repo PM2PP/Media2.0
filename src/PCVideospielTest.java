@@ -30,6 +30,7 @@ public class PCVideospielTest extends AbstractVideospielTest
 //		assertEquals(BEZEICHNUNG, _pcVideoSpiel.getMedienBezeichnung());
 //	}
 
+	@Override
 	protected PCVideospiel getMedium()
 	{
 		return new PCVideospiel(TITEL, KOMMENTAR, SYSTEM);
@@ -52,6 +53,7 @@ public class PCVideospielTest extends AbstractVideospielTest
 //	}
 
 	@Test
+	@Override
 	public void testBerechneMietgebuehr()
 	{
 		assertEquals(getMedium().berechneMietgebuehr(1), Geldbetrag.get(200));
