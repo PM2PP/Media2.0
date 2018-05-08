@@ -6,51 +6,18 @@ public class PCVideospielTest extends AbstractVideospielTest
 
 	private static final String KOMMENTAR = "Kommentar";
 	private static final String TITEL = "Titel";
-//	private static final String BEZEICHNUNG = "Videospiel";
 	private static final String SYSTEM = "System";
-//	private PCVideospiel _pcVideoSpiel;
 
 	public PCVideospielTest()
 	{
 		//Superaufruf ist parameterlos und wird automatisch aufgerufen
-//		_pcVideoSpiel = getMedium();
 	}
-
-//	@Test
-//	public void testeVideospiel()
-//	{
-//		assertEquals(TITEL, _pcVideoSpiel.getTitel());
-//		assertEquals(KOMMENTAR, _pcVideoSpiel.getKommentar());
-//		assertEquals(SYSTEM, _pcVideoSpiel.getSystem());
-//	}
-//
-//	@Test
-//	public void testGetMedienBezeichnung()
-//	{
-//		assertEquals(BEZEICHNUNG, _pcVideoSpiel.getMedienBezeichnung());
-//	}
 
 	@Override
 	protected PCVideospiel getMedium()
 	{
 		return new PCVideospiel(TITEL, KOMMENTAR, SYSTEM);
 	}
-//
-//	@Test
-//	public final void testSetKommentar()
-//	{
-//		PCVideospiel medium = getMedium();
-//		medium.setKommentar("Kommentar2");
-//		assertEquals(medium.getKommentar(), "Kommentar2");
-//	}
-//
-//	@Test
-//	public final void testSetTitel()
-//	{
-//		PCVideospiel medium = getMedium();
-//		medium.setTitel("Titel2");
-//		assertEquals(medium.getTitel(), "Titel2");
-//	}
 
 	@Test
 	@Override
