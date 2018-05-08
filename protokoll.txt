@@ -1,0 +1,12 @@
+Ausleihe: DVD:
+    Titel: Shape of Water
+    Kommentar: Der mit einem Oscar ausgezeichnete Blockbuster
+    Regisseur: Guillermo Del Toro
+    Laufzeit: 110
+am 8.5.2018 verliehen an
+    Kundennummer: 123460
+    Name: Katarina Klum
+    Telefon: unbekannt
+    Anschrift:
+    Ottensener Strasse 10
+    22761 Hamburg
