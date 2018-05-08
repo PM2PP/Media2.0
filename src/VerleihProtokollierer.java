@@ -32,38 +32,25 @@ public class VerleihProtokollierer
 	 * @require ereignis.equals("Ausleihe") || ereignis.equals("Rückgabe")
 	 * @require verleihkarte != null
 	 */
-	public void protokolliere(String ereignis, Verleihkarte verleihkarte)
+	public void protokolliere(String ereignis, Verleihkarte verleihkarte) throws ProtokollierException
 	{
 		assert ereignis != null : "Vorbedingung verletzt: ereignis != null";
 		assert ereignis.equals("Ausleihe") || ereignis.equals("Rückgabe") : "Vorbedingung verletzt: ereignis.equals(\"Ausleihe\") || ereignis.equals(\"Rückgabe\")";
 		assert verleihkarte != null : "Vorbedingung verletzt: verleihkarte != null";
 			
-		try
+		try(FileWriter filewriter = new FileWriter("./protokoll.txt", true))
 		{
-			_filewriter = new FileWriter("./protokoll.txt", true);
-			_filewriter.write(ereignis + ": " + verleihkarte.getFormatiertenString());
-			_filewriter.close();
+			
+			filewriter.write(ereignis + ": " + verleihkarte.getFormatiertenString());
+			//filewriter.close();
 //			_filewriter = new FileWriter("./protokoll.txt", true);
 		}
 		catch (IOException e)
 		{
-			System.err.println(e);
+			throw new ProtokollierException(e.toString());
+//			System.err.println(e);
 //			e.printStackTrace();
 		}
-//		finally
-//		{
-//			try
-//			{
-//				_filewriter.close();
-//			}
-//			catch(IOException e)
-//			{
-//				System.err.println(e);
-//			}
-//		}
-		
-		
-//		System.out.println(ereignis + ": " + verleihkarte.getFormatiertenString());
 	}
 
 }

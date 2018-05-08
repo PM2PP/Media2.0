@@ -3,6 +3,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.JOptionPane;
+
 /**
  * Diese Klasse implementiert das Interface VerleihService. Siehe dortiger
  * Kommentar.
@@ -103,7 +105,15 @@ class VerleihServiceImpl extends AbstractObservableService implements
 
         for (Medium medium : medien)
         {
-        	_speicher.protokolliere("Rückgabe", getVerleihkarteFuer(medium));
+        	try
+			{
+				_speicher.protokolliere("Rückgabe", getVerleihkarteFuer(medium));
+			}
+			catch (ProtokollierException e)
+			{
+				JOptionPane.showMessageDialog(null, e,
+	    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+			}
             _verleihkarten.remove(medium);
         }
         informiereUeberAenderung();
@@ -152,7 +162,15 @@ class VerleihServiceImpl extends AbstractObservableService implements
         {
             Verleihkarte verleihkarte = new Verleihkarte(kunde, medium,
                     ausleihDatum);
-            _speicher.protokolliere("Ausleihe", verleihkarte);
+            try
+			{
+				_speicher.protokolliere("Ausleihe", verleihkarte);
+			}
+			catch (ProtokollierException e)
+			{
+				JOptionPane.showMessageDialog(null, e,
+	    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+			}
             _verleihkarten.put(medium, verleihkarte);
         }
 

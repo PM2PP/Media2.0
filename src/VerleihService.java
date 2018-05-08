@@ -22,6 +22,7 @@ interface VerleihService extends ObservableService
      * @param kunde Ein Kunde, an den ein Medium verliehen werden soll
      * @param medien Die Medien, die verliehen werden sollen
      * @param ausleihDatum Der erste Ausleihtag
+     * @throws ProtokollierException 
      * 
      * @require kundeImBestand(kunde)
      * @require sindAlleNichtVerliehen(medien)

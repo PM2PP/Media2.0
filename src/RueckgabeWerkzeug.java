@@ -2,6 +2,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TextArea;
@@ -14,7 +16,8 @@ import javafx.scene.layout.Pane;
  * @author SE2-Team, PM2-Team
  * @version SoSe 2018
  */
-public class RueckgabeWerkzeug {
+public class RueckgabeWerkzeug
+{
 	/**
 	 * Die UI-Komponente der Rueckgabe.
 	 */
@@ -35,7 +38,8 @@ public class RueckgabeWerkzeug {
 	 * 
 	 * @require verleihService != null
 	 */
-	public RueckgabeWerkzeug(VerleihService verleihService) {
+	public RueckgabeWerkzeug(VerleihService verleihService)
+	{
 		assert verleihService != null : "Vorbedingung verletzt: verleihService != null";
 		_verleihService = verleihService;
 
@@ -43,7 +47,15 @@ public class RueckgabeWerkzeug {
 		_rueckgabeUI = new RueckgabeUI();
 
 		// Die Beobachter werden erzeugt und an den Services registriert.
-		registriereServiceBeobachter();
+		try
+		{
+			registriereServiceBeobachter();
+		}
+		catch (ProtokollierException e)
+		{
+			JOptionPane.showMessageDialog(null, e,
+    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+		}
 
 		// Die Rückgabe-Aktionen werden erzeugt und an den UI-Widgets
 		// registriert.
@@ -56,14 +68,26 @@ public class RueckgabeWerkzeug {
 	/**
 	 * Setzt die Materialien an der UI, die angezeigt werden sollen.
 	 */
-	private void setzeAnzuzeigendeMaterialien() {
-		setzeAnzuzeigendeVerleihkarten();
+	private void setzeAnzuzeigendeMaterialien()
+	{
+		try
+		{
+			setzeAnzuzeigendeVerleihkarten();
+		}
+		catch (ProtokollierException e)
+		{
+			JOptionPane.showMessageDialog(null, e,
+    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 
 	/**
 	 * Registriert die Aktionen, die bei bestimmten UI-Events ausgeführt werden.
+	 * 
+	 * @throws ProtokollierException
 	 */
-	private void registriereUIAktionen() {
+	private void registriereUIAktionen()
+	{
 		registriereRuecknahmeAktion();
 		registriereVerleihkartenAnzeigenAktion();
 	}
@@ -72,8 +96,10 @@ public class RueckgabeWerkzeug {
 	 * Registriert die Aktion die ausgeführt wird, wenn Verleihkarten selektiert
 	 * werden.
 	 */
-	private void registriereVerleihkartenAnzeigenAktion() {
-		_rueckgabeUI.getVerleihkartenAuflisterTable().getSelectionModel().selectedIndexProperty().addListener(event -> {
+	private void registriereVerleihkartenAnzeigenAktion()
+	{
+		_rueckgabeUI.getVerleihkartenAuflisterTable().getSelectionModel().selectedIndexProperty().addListener(event ->
+		{
 			zeigeAusgewaehlteVerleihkarten();
 			aktualisiereRuecknahmeButton();
 		});
@@ -82,21 +108,44 @@ public class RueckgabeWerkzeug {
 	/**
 	 * Registriert die Rücknahmeaktion.
 	 */
-	private void registriereRuecknahmeAktion() {
-		_rueckgabeUI.getRuecknahmeButton().setOnAction(event -> nimmAusgewaehlteMedienZurueck());
+	private void registriereRuecknahmeAktion()
+	{
+		_rueckgabeUI.getRuecknahmeButton().setOnAction(event -> {
+			try
+			{
+				nimmAusgewaehlteMedienZurueck();
+			}
+			catch (ProtokollierException e)
+			{
+				JOptionPane.showMessageDialog(null, e,
+	    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+			}
+		});
 	}
 
 	/**
 	 * Registriert die Beobachter an den Services.
 	 */
-	private void registriereServiceBeobachter() {
-		_verleihService.registriereBeobachter(() -> setzeAnzuzeigendeVerleihkarten());
+	private void registriereServiceBeobachter() throws ProtokollierException
+	{
+		_verleihService.registriereBeobachter(() -> {
+			try
+			{
+				setzeAnzuzeigendeVerleihkarten();
+			}
+			catch (ProtokollierException e)
+			{
+				JOptionPane.showMessageDialog(null, e,
+	    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+			}
+		});
 	}
 
 	/**
 	 * Holt alle Verleihkarten vom Verleihservice und setzt diese an der UI.
 	 */
-	private void setzeAnzuzeigendeVerleihkarten() {
+	private void setzeAnzuzeigendeVerleihkarten() throws ProtokollierException
+	{
 		List<Verleihkarte> verleihkarten = _verleihService.getVerleihkarten();
 		ObservableList<Verleihkarte> verleihkartenListe = FXCollections.observableArrayList();
 		verleihkartenListe.addAll(verleihkarten);
@@ -106,10 +155,12 @@ public class RueckgabeWerkzeug {
 	/**
 	 * Gibt die vom Benutzer ausgewählten Medien zurück.
 	 */
-	private void nimmAusgewaehlteMedienZurueck() {
+	private void nimmAusgewaehlteMedienZurueck() throws ProtokollierException
+	{
 		List<Verleihkarte> verleihkarten = getSelectedVerleihkarten();
 		List<Medium> medien = new ArrayList<Medium>();
-		for (Verleihkarte verleihkarte : verleihkarten) {
+		for (Verleihkarte verleihkarte : verleihkarten)
+		{
 			medien.add(verleihkarte.getMedium());
 		}
 		_verleihService.nimmZurueck(medien, Datum.heute());
@@ -118,11 +169,13 @@ public class RueckgabeWerkzeug {
 	/**
 	 * Zeigt die Details der ausgewählten Verleihkarten an.
 	 */
-	private void zeigeAusgewaehlteVerleihkarten() {
+	private void zeigeAusgewaehlteVerleihkarten()
+	{
 		List<Verleihkarte> selektierteVerleihkarten = getSelectedVerleihkarten();
 		TextArea _ausgewaehlteVerleihkartenTextArea = _rueckgabeUI.getVerleihkartenAnzeigerTextArea();
 		_ausgewaehlteVerleihkartenTextArea.setText("");
-		for (Verleihkarte verleihkarte : selektierteVerleihkarten) {
+		for (Verleihkarte verleihkarte : selektierteVerleihkarten)
+		{
 			_ausgewaehlteVerleihkartenTextArea.appendText(verleihkarte.getFormatiertenString());
 			_ausgewaehlteVerleihkartenTextArea.appendText("--------------- \n");
 		}
@@ -131,7 +184,8 @@ public class RueckgabeWerkzeug {
 	/**
 	 * Graut den RuecknahmeButton aus, wenn keine Verleihkarten selektiert sind.
 	 */
-	private void aktualisiereRuecknahmeButton() {
+	private void aktualisiereRuecknahmeButton()
+	{
 		_rueckgabeUI.getRuecknahmeButton().setDisable(getSelectedVerleihkarten().isEmpty());
 	}
 
@@ -142,7 +196,8 @@ public class RueckgabeWerkzeug {
 	 * 
 	 * @ensure result != null
 	 */
-	public Pane getUIPane() {
+	public Pane getUIPane()
+	{
 		return _rueckgabeUI.getUIPane();
 	}
 
@@ -153,7 +208,8 @@ public class RueckgabeWerkzeug {
 	 * 
 	 * @ensure result != null
 	 */
-	private List<Verleihkarte> getSelectedVerleihkarten() {
+	private List<Verleihkarte> getSelectedVerleihkarten()
+	{
 		return _rueckgabeUI.getVerleihkartenAuflisterTable().getSelectionModel().getSelectedItems();
 	}
 }
