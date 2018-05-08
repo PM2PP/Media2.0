@@ -29,6 +29,11 @@ class VerleihServiceImpl extends AbstractObservableService implements
      * Der Kundenstamm.
      */
     private KundenstammService _kundenstamm;
+    
+    /**
+     * Der Speicher von Verleihvorgängen
+     */
+    private VerleihProtokollierer _speicher;
 
     /**
      * Konstruktor. Erzeugt einen neuen VerleihServiceImpl.
@@ -51,6 +56,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
         _verleihkarten = erzeugeVerleihkartenBestand(initialBestand);
         _kundenstamm = kundenstamm;
         _medienbestand = medienbestand;
+        _speicher = new VerleihProtokollierer();
     }
 
     /**
@@ -97,6 +103,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
 
         for (Medium medium : medien)
         {
+        	_speicher.protokolliere("Rückgabe", getVerleihkarteFuer(medium));
             _verleihkarten.remove(medium);
         }
         informiereUeberAenderung();
@@ -145,7 +152,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
         {
             Verleihkarte verleihkarte = new Verleihkarte(kunde, medium,
                     ausleihDatum);
-
+            _speicher.protokolliere("Ausleihe", verleihkarte);
             _verleihkarten.put(medium, verleihkarte);
         }
 
