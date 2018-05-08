@@ -323,3 +323,281 @@ am 3.4.2009 verliehen an
     Telefon: unbekannt
     Anschrift:
     unbekannt
+Ausleihe: CD:
+    Titel: CD1
+    Kommentar: baz
+    Interpret: foo
+    Spiellänge: 123
+am 3.4.2009 verliehen an
+    Kundennummer: 123456
+    Name: ich du
+    Telefon: unbekannt
+    Anschrift:
+    unbekannt
+Ausleihe: CD:
+    Titel: CD2
+    Kommentar: baz
+    Interpret: foo
+    Spiellänge: 123
+am 3.4.2009 verliehen an
+    Kundennummer: 123456
+    Name: ich du
+    Telefon: unbekannt
+    Anschrift:
+    unbekannt
+Rückgabe: CD:
+    Titel: CD1
+    Kommentar: baz
+    Interpret: foo
+    Spiellänge: 123
+am 3.4.2009 verliehen an
+    Kundennummer: 123456
+    Name: ich du
+    Telefon: unbekannt
+    Anschrift:
+    unbekannt
+Rückgabe: CD:
+    Titel: CD2
+    Kommentar: baz
+    Interpret: foo
+    Spiellänge: 123
+am 3.4.2009 verliehen an
+    Kundennummer: 123456
+    Name: ich du
+    Telefon: unbekannt
+    Anschrift:
+    unbekannt
+Ausleihe: CD:
+    Titel: CD1
+    Kommentar: baz
+    Interpret: foo
+    Spiellänge: 123
+am 3.4.2009 verliehen an
+    Kundennummer: 123456
+    Name: ich du
+    Telefon: unbekannt
+    Anschrift:
+    unbekannt
+Ausleihe: CD:
+    Titel: CD2
+    Kommentar: baz
+    Interpret: foo
+    Spiellänge: 123
+am 3.4.2009 verliehen an
+    Kundennummer: 123456
+    Name: ich du
+    Telefon: unbekannt
+    Anschrift:
+    unbekannt
+Ausleihe: CD:
+    Titel: CD3
+    Kommentar: baz
+    Interpret: foo
+    Spiellänge: 123
+am 3.4.2009 verliehen an
+    Kundennummer: 123456
+    Name: ich du
+    Telefon: unbekannt
+    Anschrift:
+    unbekannt
+Ausleihe: CD:
+    Titel: Gute Nacht
+    Kommentar: Sechstes Soloalbum
+    Interpret: Kontra K
+    Spiellänge: 56
+am 8.5.2018 verliehen an
+    Kundennummer: 123457
+    Name: Kai Konrad
+    Telefon: unbekannt
+    Anschrift:
+    Kannenweg 23
+    21868 Stade
+Rückgabe: CD:
+    Titel: Hard candy
+    Kommentar: besser
+    Interpret: Madonna
+    Spiellänge: 65
+am 14.4.2018 verliehen an
+    Kundennummer: 123456
+    Name: Susi Sonnenschein
+    Telefon: unbekannt
+    Anschrift:
+    Sonnenallee 20
+    22760 Hamburg
+Ausleihe: CD:
+    Titel: Evolve
+    Kommentar: gut
+    Interpret: Imagine Dragons
+    Spiellänge: 43
+am 8.5.2018 verliehen an
+    Kundennummer: 123464
+    Name: Lara Croft
+    Telefon: unbekannt
+    Anschrift:
+    Abenteuerallee 33
+    24104 Kiel
+Ausleihe: DVD:
+    Titel: James Bond - Ein Quantum Trost
+    Kommentar: Ein Quantum Trost setzt da an, wo Casino Royale endet
+    Regisseur: Marc Forster
+    Laufzeit: 110
+am 8.5.2018 verliehen an
+    Kundennummer: 123465
+    Name: John. J. Ava
+    Telefon: unbekannt
+    Anschrift:
+    Wurtstrasse 23
+    58507 Köln
+Rückgabe: CD:
+    Titel: Divide
+    Kommentar: Drittes Album des Künstlers
+    Interpret: Ed Sheeran
+    Spiellänge: 47
+am 8.5.2018 verliehen an
+    Kundennummer: 123457
+    Name: Kai Konrad
+    Telefon: unbekannt
+    Anschrift:
+    Kannenweg 23
+    21868 Stade
+Ausleihe: CD:
+    Titel: The Classics
+    Kommentar: Filmmusik von Hans Zimmer interpretiert von diversen Künstlern.
+    Interpret: Hans Zimmer
+    Spiellänge: 70
+am 8.5.2018 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Ausleihe: DVD:
+    Titel: Shape of Water
+    Kommentar: Der mit einem Oscar ausgezeichnete Blockbuster
+    Regisseur: Guillermo Del Toro
+    Laufzeit: 110
+am 8.5.2018 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Rückgabe: Videospiel:
+    Titel: Dark Souls III
+    Kommentar: Kein Spiel für jemanden mit einem niedrigen Frustrationslevel
+    System: Xbox One
+am 7.5.2018 verliehen an
+    Kundennummer: 123460
+    Name: Katarina Klum
+    Telefon: unbekannt
+    Anschrift:
+    Ottensener Strasse 10
+    22761 Hamburg
+Ausleihe: CD:
+    Titel: The Classics
+    Kommentar: Filmmusik von Hans Zimmer interpretiert von diversen Künstlern.
+    Interpret: Hans Zimmer
+    Spiellänge: 70
+am 8.5.2018 verliehen an
+    Kundennummer: 123459
+    Name: Julia Schmidt
+    Telefon: unbekannt
+    Anschrift:
+    Julianenallee 22
+    24103 Kiel
+Rückgabe: Videospiel:
+    Titel: The Last of Us
+    Kommentar:  Eines der bestbewerteten Videospiele überhaupt
+    System: Playstation 4
+am 6.5.2018 verliehen an
+    Kundennummer: 123457
+    Name: Kai Konrad
+    Telefon: unbekannt
+    Anschrift:
+    Kannenweg 23
+    21868 Stade
+Rückgabe: CD:
+    Titel: The Classics
+    Kommentar: Filmmusik von Hans Zimmer interpretiert von diversen Künstlern.
+    Interpret: Hans Zimmer
+    Spiellänge: 70
+am 8.5.2018 verliehen an
+    Kundennummer: 123459
+    Name: Julia Schmidt
+    Telefon: unbekannt
+    Anschrift:
+    Julianenallee 22
+    24103 Kiel
+Ausleihe: DVD:
+    Titel: Pirates of the Caribbean - Am Ende der Welt
+    Kommentar: Abenteuer des Cpt. Jack Sparrow
+    Regisseur: Gore Verbinski
+    Laufzeit: 160
+am 8.5.2018 verliehen an
+    Kundennummer: 123459
+    Name: Julia Schmidt
+    Telefon: unbekannt
+    Anschrift:
+    Julianenallee 22
+    24103 Kiel
+Ausleihe: Videospiel:
+    Titel: Mario Kart
+    Kommentar:  Neue Strecken, neue Rennfahrer, neue Fahrzeuge und 12-Spieler-Rennen
+    System:  Wii
+am 8.5.2018 verliehen an
+    Kundennummer: 123461
+    Name: Anna Kurnikowa
+    Telefon: unbekannt
+    Anschrift:
+    Osterweg 1
+    22670 Hamburg
+Ausleihe: DVD:
+    Titel: Shape of Water
+    Kommentar: Der mit einem Oscar ausgezeichnete Blockbuster
+    Regisseur: Guillermo Del Toro
+    Laufzeit: 110
+am 8.5.2018 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Ausleihe: CD:
+    Titel: Helene Fischer
+    Kommentar: Das lange erwartete Album der beispiellosen Künstlerin
+    Interpret: Helene Fischer
+    Spiellänge: 56
+am 8.5.2018 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Rückgabe: CD:
+    Titel: Helene Fischer
+    Kommentar: Das lange erwartete Album der beispiellosen Künstlerin
+    Interpret: Helene Fischer
+    Spiellänge: 56
+am 8.5.2018 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Ausleihe: CD:
+    Titel: Helene Fischer
+    Kommentar: Das lange erwartete Album der beispiellosen Künstlerin
+    Interpret: Helene Fischer
+    Spiellänge: 56
+am 8.5.2018 verliehen an
+    Kundennummer: 123460
+    Name: Katarina Klum
+    Telefon: unbekannt
+    Anschrift:
+    Ottensener Strasse 10
+    22761 Hamburg
