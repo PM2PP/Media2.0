@@ -13,7 +13,7 @@ public class VerleihProtokollierer
 			//C:\\Users\\Philip\\Documents -> dafür z.B. Zugriff verweigert, da ungeschützt
 			//D:\\ -> Laufwerk D existiert bei Surface nicht, daher ebenfalls Fehler
 			//Anmerkung: Zwei Backslash in einem String, also "\\" stehen für einen Backslash \
-			_filewriter = new FileWriter("./protokoll.txt", true);
+			_filewriter = new FileWriter("./protokoll.txt", true); //false falls beim ersten Mal alles überschrieben werden soll
 		}
 		catch (IOException e)
 		{
@@ -40,13 +40,28 @@ public class VerleihProtokollierer
 			
 		try
 		{
+			_filewriter = new FileWriter("./protokoll.txt", true);
 			_filewriter.write(ereignis + ": " + verleihkarte.getFormatiertenString());
+			_filewriter.close();
+//			_filewriter = new FileWriter("./protokoll.txt", true);
 		}
 		catch (IOException e)
 		{
 			System.err.println(e);
 //			e.printStackTrace();
 		}
+//		finally
+//		{
+//			try
+//			{
+//				_filewriter.close();
+//			}
+//			catch(IOException e)
+//			{
+//				System.err.println(e);
+//			}
+//		}
+		
 		
 //		System.out.println(ereignis + ": " + verleihkarte.getFormatiertenString());
 	}

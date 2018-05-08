@@ -1,12 +1,35 @@
 Ausleihe: DVD:
-    Titel: Shape of Water
-    Kommentar: Der mit einem Oscar ausgezeichnete Blockbuster
-    Regisseur: Guillermo Del Toro
-    Laufzeit: 110
+    Titel: Thor: Tag der Entscheidung
+    Kommentar: Thor verliert seinen Hammer! Wie soll er jetzt die Welt retten?
+    Regisseur: Taika Waititi
+    Laufzeit: 140
 am 8.5.2018 verliehen an
-    Kundennummer: 123460
-    Name: Katarina Klum
+    Kundennummer: 123459
+    Name: Julia Schmidt
     Telefon: unbekannt
     Anschrift:
-    Ottensener Strasse 10
-    22761 Hamburg
+    Julianenallee 22
+    24103 Kiel
+Ausleihe: CD:
+    Titel: Wincing the Night Away
+    Kommentar: Die fleißigsten Slacker der Indie-Szene 
+    Interpret: the Shins
+    Spiellänge: 69
+am 8.5.2018 verliehen an
+    Kundennummer: 123459
+    Name: Julia Schmidt
+    Telefon: unbekannt
+    Anschrift:
+    Julianenallee 22
+    24103 Kiel
+Ausleihe: Videospiel:
+    Titel: League of Legends
+    Kommentar: Ein Konkurrent zum Salar de Uyuni...
+    System: Mac OSX
+am 8.5.2018 verliehen an
+    Kundennummer: 123459
+    Name: Julia Schmidt
+    Telefon: unbekannt
+    Anschrift:
+    Julianenallee 22
+    24103 Kiel
