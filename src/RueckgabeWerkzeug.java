@@ -47,15 +47,15 @@ public class RueckgabeWerkzeug
 		_rueckgabeUI = new RueckgabeUI();
 
 		// Die Beobachter werden erzeugt und an den Services registriert.
-		try
-		{
+//		try
+//		{
 			registriereServiceBeobachter();
-		}
-		catch (ProtokollierException e)
-		{
-			JOptionPane.showMessageDialog(null, e,
-    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-		}
+//		}
+//		catch (ProtokollierException e)
+//		{
+//			JOptionPane.showMessageDialog(null, e,
+//    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+//		}
 
 		// Die Rückgabe-Aktionen werden erzeugt und an den UI-Widgets
 		// registriert.
@@ -70,15 +70,15 @@ public class RueckgabeWerkzeug
 	 */
 	private void setzeAnzuzeigendeMaterialien()
 	{
-		try
-		{
+//		try
+//		{
 			setzeAnzuzeigendeVerleihkarten();
-		}
-		catch (ProtokollierException e)
-		{
-			JOptionPane.showMessageDialog(null, e,
-    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-		}
+//		}
+//		catch (ProtokollierException e)
+//		{
+//			JOptionPane.showMessageDialog(null, e,
+//    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+//		}
 	}
 
 	/**
@@ -126,25 +126,25 @@ public class RueckgabeWerkzeug
 	/**
 	 * Registriert die Beobachter an den Services.
 	 */
-	private void registriereServiceBeobachter() throws ProtokollierException
+	private void registriereServiceBeobachter() //throws ProtokollierException
 	{
 		_verleihService.registriereBeobachter(() -> {
-			try
-			{
+//			try
+//			{
 				setzeAnzuzeigendeVerleihkarten();
-			}
-			catch (ProtokollierException e)
-			{
-				JOptionPane.showMessageDialog(null, e,
-	    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-			}
+//			}
+//			catch (ProtokollierException e)
+//			{
+//				JOptionPane.showMessageDialog(null, e,
+//	    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+//			}
 		});
 	}
 
 	/**
 	 * Holt alle Verleihkarten vom Verleihservice und setzt diese an der UI.
 	 */
-	private void setzeAnzuzeigendeVerleihkarten() throws ProtokollierException
+	private void setzeAnzuzeigendeVerleihkarten() //throws ProtokollierException
 	{
 		List<Verleihkarte> verleihkarten = _verleihService.getVerleihkarten();
 		ObservableList<Verleihkarte> verleihkartenListe = FXCollections.observableArrayList();

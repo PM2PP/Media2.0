@@ -127,15 +127,15 @@ class AusleihWerkzeug
 			@Override
 			public void reagiereAufAenderung() 
 			{
-				try
-				{
+//				try
+//				{
 					aktualisiereAusleihButton();
-				}
-				catch (ProtokollierException e)
-				{
-					JOptionPane.showMessageDialog(null, e,
-		    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-				}
+//				}
+//				catch (ProtokollierException e)
+//				{
+//					JOptionPane.showMessageDialog(null, e,
+//		    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+//				}
 			}
 		});
 	}
@@ -174,15 +174,15 @@ class AusleihWerkzeug
 			public void reagiereAufAenderung()
 			{
 				zeigeAusgewaehltenKunden();
-				try
-				{
+//				try
+//				{
 					aktualisiereAusleihButton();
-				}
-				catch (ProtokollierException e)
-				{
-					JOptionPane.showMessageDialog(null, e,
-		    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-				}
+//				}
+//				catch (ProtokollierException e)
+//				{
+//					JOptionPane.showMessageDialog(null, e,
+//		    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+//				}
 			}
 		});
 	}
@@ -199,15 +199,15 @@ class AusleihWerkzeug
 			public void reagiereAufAenderung()
 			{
 				zeigeAusgewaehlteMedien();
-				try
-				{
+//				try
+//				{
 					aktualisiereAusleihButton();
-				}
-				catch (ProtokollierException e)
-				{
-					JOptionPane.showMessageDialog(null, e,
-		    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-				}
+//				}
+//				catch (ProtokollierException e)
+//				{
+//					JOptionPane.showMessageDialog(null, e,
+//		    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+//				}
 			}
 		});
 	}
@@ -218,7 +218,7 @@ class AusleihWerkzeug
 	 * 
 	 * @return true, wenn ausleihen möglich ist, sonst false.
 	 */
-	private boolean istAusleihenMoeglich() throws ProtokollierException
+	private boolean istAusleihenMoeglich() //throws ProtokollierException
 	{
 		List<Medium> medien = _medienAuflisterWerkzeug.getSelectedMedien();
 		Kunde kunde = _kundenAuflisterWerkzeug.getSelectedKunde();
@@ -268,7 +268,7 @@ class AusleihWerkzeug
 	 * Button ausgegraut.
 	 * @throws ProtokollierException 
 	 */
-	private void aktualisiereAusleihButton() throws ProtokollierException
+	private void aktualisiereAusleihButton() //throws ProtokollierException
 	{
 		boolean istAusleihenMoeglich = istAusleihenMoeglich();
 		_ausleiheUI.getAusleihButton().setDisable(!istAusleihenMoeglich);
