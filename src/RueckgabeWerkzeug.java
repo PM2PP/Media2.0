@@ -6,6 +6,8 @@ import javax.swing.JOptionPane;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 
@@ -111,15 +113,15 @@ public class RueckgabeWerkzeug
 	private void registriereRuecknahmeAktion()
 	{
 		_rueckgabeUI.getRuecknahmeButton().setOnAction(event -> {
-			try
-			{
+//			try
+//			{
 				nimmAusgewaehlteMedienZurueck();
-			}
-			catch (ProtokollierException e)
-			{
-				JOptionPane.showMessageDialog(null, e,
-	    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-			}
+//			}
+//			catch (ProtokollierException e)
+//			{
+//				JOptionPane.showMessageDialog(null, e,
+//	    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+//			}
 		});
 	}
 
@@ -155,7 +157,7 @@ public class RueckgabeWerkzeug
 	/**
 	 * Gibt die vom Benutzer ausgewählten Medien zurück.
 	 */
-	private void nimmAusgewaehlteMedienZurueck() throws ProtokollierException
+	private void nimmAusgewaehlteMedienZurueck()
 	{
 		List<Verleihkarte> verleihkarten = getSelectedVerleihkarten();
 		List<Medium> medien = new ArrayList<Medium>();
@@ -163,7 +165,23 @@ public class RueckgabeWerkzeug
 		{
 			medien.add(verleihkarte.getMedium());
 		}
-		_verleihService.nimmZurueck(medien, Datum.heute());
+
+		try
+		{
+			_verleihService.nimmZurueck(medien, Datum.heute());
+		}
+		catch (ProtokollierException e)
+		{
+//			JOptionPane.showMessageDialog(null, e,
+//			"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Zurückgeben nicht möglich");
+			alert.setHeaderText("Da protokollieren nicht möglich ist, ist das Zurückgeben nicht möglich");
+			alert.setContentText(e.toString());
+
+			alert.showAndWait();
+		}
+
 	}
 
 	/**

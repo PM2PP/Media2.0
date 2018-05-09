@@ -48,7 +48,7 @@ class CD extends AbstractMedium
 	 */
 	public CD(String titel, String kommentar, String interpret, int spiellaenge)
 	{
-		super(titel,kommentar);
+		super(titel,kommentar, "CD");
 		assert interpret != null : "Vorbedingung verletzt: interpret != null";
 		assert spiellaenge > 0 : "Vorbedingung verletzt: spiellaenge > 0";
 		_spiellaenge = spiellaenge;
@@ -82,11 +82,11 @@ class CD extends AbstractMedium
 		_interpret = interpret;
 	}
 
-	@Override
-	public String getMedienBezeichnung()
-	{
-		return "CD";
-	}
+//	@Override
+//	public String getMedienBezeichnung()
+//	{
+//		return "CD";
+//	}
 
 	/**
 	 * Gibt die Spiellänge (in Minuten) der CD zurück.

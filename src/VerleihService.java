@@ -30,7 +30,7 @@ interface VerleihService extends ObservableService
      * 
      * @ensure sindAlleVerliehen(medien)
      */
-    void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum);
+    void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum) throws ProtokollierException;
 
     /**
      * Prüft ob die ausgewählten Medium für den Kunde ausleihbar sind
@@ -90,13 +90,14 @@ interface VerleihService extends ObservableService
      * 
      * @param medien Die Medien.
      * @param rueckgabeDatum Das Rückgabedatum.
+     * @throws ProtokollierException 
      * 
      * @require sindAlleVerliehen(medien)
      * @require rueckgabeDatum != null
      * 
      * @ensure sindAlleNichtVerliehen(medien)
      */
-    void nimmZurueck(List<Medium> medien, Datum rueckgabeDatum);
+    void nimmZurueck(List<Medium> medien, Datum rueckgabeDatum) throws ProtokollierException;
 
     /**
      * Prüft ob das angegebene Medium verliehen ist.

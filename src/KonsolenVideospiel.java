@@ -4,7 +4,7 @@ class KonsolenVideospiel extends AbstractVideospiel
 
 	public KonsolenVideospiel(String titel, String kommentar, String system)
 	{
-		super(titel, kommentar, system);
+		super(titel, kommentar, system, "Konsolenvideospiel");
 	}
 
 //	public int getPreisNachTagen(int tage)
@@ -56,4 +56,5 @@ class KonsolenVideospiel extends AbstractVideospiel
 		}
 		return preis;
 	}
+//	return tage/3 * 700;
 }

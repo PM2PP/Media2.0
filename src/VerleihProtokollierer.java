@@ -44,7 +44,7 @@ public class VerleihProtokollierer
 				"Rückgabe") : "Vorbedingung verletzt: ereignis.equals(\"Ausleihe\") || ereignis.equals(\"Rückgabe\")";
 		assert verleihkarte != null : "Vorbedingung verletzt: verleihkarte != null";
 
-		try (FileWriter filewriter = new FileWriter("./protokoll.txt", true))
+		try (FileWriter filewriter = new FileWriter("D:\\", true))
 		{
 			filewriter.write(ereignis + ": " + verleihkarte.getFormatiertenString());
 			//filewriter.close();

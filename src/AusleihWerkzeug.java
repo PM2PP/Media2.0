@@ -2,6 +2,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 
 /**
@@ -125,43 +127,42 @@ class AusleihWerkzeug
 		{
 
 			@Override
-			public void reagiereAufAenderung() 
+			public void reagiereAufAenderung()
 			{
-//				try
-//				{
-					aktualisiereAusleihButton();
-//				}
-//				catch (ProtokollierException e)
-//				{
-//					JOptionPane.showMessageDialog(null, e,
-//		    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-//				}
+				// try
+				// {
+				aktualisiereAusleihButton();
+				// }
+				// catch (ProtokollierException e)
+				// {
+				// JOptionPane.showMessageDialog(null, e,
+				// "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+				// }
 			}
 		});
 	}
 
 	/**
-     * Registriert die Aktion, die ausgeführt wird, wenn auf den Ausleih-Button
-     * gedrückt wird.
-     */
-    private void registriereAusleihAktion() 
-    {
-    	
-    		_ausleiheUI.getAusleihButton()
-                .setOnAction(event -> {
-					try
-					{
-						leiheAusgewaehlteMedienAus();
-					}
-					catch (ProtokollierException e)
-					{
-				    	
-				    		JOptionPane.showMessageDialog(null, e,
-				    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-				    	} 
-				});
-    	
-    }
+	 * Registriert die Aktion, die ausgeführt wird, wenn auf den Ausleih-Button
+	 * gedrückt wird.
+	 */
+	private void registriereAusleihAktion()
+	{
+
+		_ausleiheUI.getAusleihButton().setOnAction(event ->
+		{
+//			try
+//			{
+				leiheAusgewaehlteMedienAus();
+//			}
+//			catch (ProtokollierException e)
+//			{
+//
+//				JOptionPane.showMessageDialog(null, e, "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+//			}
+		});
+
+	}
 
 	/**
 	 * Registiert die Aktion, die ausgeführt wird, wenn ein Kunde ausgewählt wird.
@@ -174,15 +175,15 @@ class AusleihWerkzeug
 			public void reagiereAufAenderung()
 			{
 				zeigeAusgewaehltenKunden();
-//				try
-//				{
-					aktualisiereAusleihButton();
-//				}
-//				catch (ProtokollierException e)
-//				{
-//					JOptionPane.showMessageDialog(null, e,
-//		    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-//				}
+				// try
+				// {
+				aktualisiereAusleihButton();
+				// }
+				// catch (ProtokollierException e)
+				// {
+				// JOptionPane.showMessageDialog(null, e,
+				// "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+				// }
 			}
 		});
 	}
@@ -199,15 +200,15 @@ class AusleihWerkzeug
 			public void reagiereAufAenderung()
 			{
 				zeigeAusgewaehlteMedien();
-//				try
-//				{
-					aktualisiereAusleihButton();
-//				}
-//				catch (ProtokollierException e)
-//				{
-//					JOptionPane.showMessageDialog(null, e,
-//		    				"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
-//				}
+				// try
+				// {
+				aktualisiereAusleihButton();
+				// }
+				// catch (ProtokollierException e)
+				// {
+				// JOptionPane.showMessageDialog(null, e,
+				// "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+				// }
 			}
 		});
 	}
@@ -218,7 +219,7 @@ class AusleihWerkzeug
 	 * 
 	 * @return true, wenn ausleihen möglich ist, sonst false.
 	 */
-	private boolean istAusleihenMoeglich() //throws ProtokollierException
+	private boolean istAusleihenMoeglich() // throws ProtokollierException
 	{
 		List<Medium> medien = _medienAuflisterWerkzeug.getSelectedMedien();
 		Kunde kunde = _kundenAuflisterWerkzeug.getSelectedKunde();
@@ -231,14 +232,27 @@ class AusleihWerkzeug
 	 * Leiht die ausgewählten Medien aus. Diese Methode wird über einen Listener
 	 * angestoßen, der reagiert, wenn der Benutzer den Ausleihen-Button drückt.
 	 */
-	private void leiheAusgewaehlteMedienAus() throws ProtokollierException
+	private void leiheAusgewaehlteMedienAus()
 	{
 		List<Medium> selectedMedien = _medienAuflisterWerkzeug.getSelectedMedien();
 		Kunde selectedKunde = _kundenAuflisterWerkzeug.getSelectedKunde();
 		Datum heute = Datum.heute();
 		
-		_verleihService.verleiheAn(selectedKunde, selectedMedien, heute); 
+		try
+		{
+		_verleihService.verleiheAn(selectedKunde, selectedMedien, heute);
+		}
+		catch (ProtokollierException e)
+		{
 
+//			JOptionPane.showMessageDialog(null, e, "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Ausleihen nicht möglich");
+			alert.setHeaderText("Da protokollieren nicht möglich ist, ist das Ausleihen nicht möglich");
+			alert.setContentText(e.toString());
+
+			alert.showAndWait();
+		}
 	}
 
 	/**
@@ -266,9 +280,10 @@ class AusleihWerkzeug
 	 * Wenn keine Medien selektiert sind oder wenn mindestes eines der selektierten
 	 * Medien bereits ausgeliehen ist oder wenn kein Kunde ausgewählt ist, wird der
 	 * Button ausgegraut.
-	 * @throws ProtokollierException 
+	 * 
+	 * @throws ProtokollierException
 	 */
-	private void aktualisiereAusleihButton() //throws ProtokollierException
+	private void aktualisiereAusleihButton() // throws ProtokollierException
 	{
 		boolean istAusleihenMoeglich = istAusleihenMoeglich();
 		_ausleiheUI.getAusleihButton().setDisable(!istAusleihenMoeglich);

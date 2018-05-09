@@ -28,18 +28,18 @@ abstract class AbstractVideospiel extends AbstractMedium
 	 * 
 	 * @ensure getSystem() == system
 	 */
-	public AbstractVideospiel(String titel, String kommentar, String system)
+	protected AbstractVideospiel(String titel, String kommentar, String system, String medienbezeichnung)
 	{
-		super(titel, kommentar);
+		super(titel, kommentar, medienbezeichnung);
 		assert system != null : "Vorbedingung verletzt: system != null";
 		_system = system;
 	}
 
-	@Override
-	public String getMedienBezeichnung()
-	{
-		return "Videospiel";
-	}
+//	@Override
+//	public String getMedienBezeichnung()
+//	{
+//		return "Videospiel";
+//	}
 
 	/**
 	 * Gibt das System zurück, auf dem das Spiel lauffähig ist.
@@ -72,6 +72,6 @@ abstract class AbstractVideospiel extends AbstractMedium
 		
 	}
 	
-	public abstract int getPreisNachTagen(int tage);
+	protected abstract int getPreisNachTagen(int tage);
 	
 }

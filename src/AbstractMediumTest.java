@@ -6,7 +6,7 @@ public abstract class AbstractMediumTest
 {
 	private static final String KOMMENTAR = "Kommentar";
 	private static final String TITEL = "Titel";
-	private static AbstractMedium _aMedium;
+	private static Medium _aMedium;
 
 	public AbstractMediumTest()
 	{
@@ -39,7 +39,7 @@ public abstract class AbstractMediumTest
 		assertNotNull(medium.getFormatiertenString());
 	}
 
-	protected abstract AbstractMedium getMedium();
+	protected abstract Medium getMedium();
 
 	@Test
 	public abstract void testBerechneMietgebuehr();

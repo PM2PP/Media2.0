@@ -4,7 +4,7 @@ class PCVideospiel extends AbstractVideospiel
 
 	public PCVideospiel(String titel, String kommentar, String system)
 	{
-		super(titel, kommentar, system);
+		super(titel, kommentar, system, "PCVideospiel");
 	}
 
 //	public int getPreisNachTagen(int tage)
